@@ -1,2 +1,2 @@
 # naijaskillhub-ui
-A frontend UI using Angular in TypeScript
+A frontend UI using Angular2 in TypeScript
