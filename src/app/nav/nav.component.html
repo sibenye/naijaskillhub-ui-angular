@@ -1,0 +1,21 @@
+
+	<header class="cd-header">
+		<div id="cd-logo"><a href="#0"><img src="assets/img/cd-logo.svg" alt="Logo"></a></div>
+
+		<div *responsive="{sizes:{min:1,max:767}}" class="nsh-nav-small-screen">
+		<nav [md-menu-trigger-for]="menu" >
+		<img src="../../assets/img/cd-icon-menu.svg" >
+		</nav>	
+        
+		<md-menu x-position="before" #menu="mdMenu">
+			<button *ngFor="let menuItem of menuItems" md-menu-item [routerLink]="menuItem.route">{{menuItem.name}}</button>			
+		</md-menu>
+		</div>
+
+		<nav class="nsh-nav-large-screen" *responsive="{sizes:{min:768,max:2000}}">
+			<ul>
+				<li *ngFor="let menuItem of menuItems" md-button [routerLink]="menuItem.route">{{menuItem.name}}</li>
+			</ul>
+        </nav>
+	</header>
+<div class="cd-header-divider"></div>

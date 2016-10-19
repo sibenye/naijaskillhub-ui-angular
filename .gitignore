@@ -9,7 +9,7 @@
 /bower_components
 
 # generated code
-aot/
+src/aot/
 
 # IDEs and editors
 /.idea
