@@ -1,5 +1,45 @@
 /* You can add global styles to this file, and also import other style files */
 
-body {
-  margin: 0;
+/* -------------------------------- 
+
+Primary style
+
+-------------------------------- */
+*, *::after, *::before {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
 }
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.6rem;
+  font-family: "Open Sans", sans-serif;
+  color: #2c343b;
+  background-color: #EEEEEE;
+}
+
+a {
+  color: #d44457;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+clear {
+  clear: both;
+}
+
+.divider {
+  height: 50px;
+}
+
+.container {
+  background-color: white;
+}
+

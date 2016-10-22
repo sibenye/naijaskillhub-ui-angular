@@ -29,3 +29,6 @@ testem.log
 
 #System Files
 .DS_Store
+
+#Client images
+assets/client_images/

@@ -1,0 +1,118 @@
+/* grid */
+.row {
+  margin: 0 -10px;
+  margin-bottom: 20px;
+}
+.row:last-child {
+  margin-bottom: 0;
+}
+[class*="col-"] {
+  padding: 10px;
+}
+
+@media all and ( min-width: 750px ) {
+
+  .col-2-3 {
+    float: left;
+    width: 66.66%;
+  }
+  .col-1-2 {
+    float: left;
+    width: 50%;
+  }
+  .col-1-3 {
+    float: left;
+    width: 33.33%;
+  }
+  .col-1-4 {
+    float: left;
+    width: 25%;
+  }
+  .col-1-8 {
+    float: left;
+    width: 12.5%;
+  }
+
+}
+/*end grid*/
+
+.nsh-content {
+    margin: 50px auto;
+    width: 40%;
+}
+
+@media all and ( min-width: 750px ) {
+    .nsh-content {
+    width: 90%;
+    }
+}
+
+@media all and ( min-width: 1150px ) {
+    .nsh-content {
+    width: 80%;
+    }
+}
+
+@media all and ( min-width: 1450px ) {
+    .nsh-content {
+    width: 75%;
+    }
+}
+
+@media all and ( min-width: 1800px ) {
+    .nsh-content {
+    width: 60%;
+    }
+}
+
+.nsh-grid {
+    padding: 0px;
+}
+.nsh-grid-content {
+    padding: 5px 0px 5px 0px;
+    margin: 0px;
+    border-top: 2px solid #EEEEEE;
+}
+
+.nsh-grid-header {
+    padding: 0px 24px 5px 24px;
+    margin: 0px;
+}
+
+.nsh-grid img {
+    margin: 0px 0px 20px 0px;
+    max-height: 290px;
+}
+
+.nsh-grid-action {
+    padding: 0px;
+    margin: 0px;
+}
+
+.nsh-grid-action button {
+    width: 100%;
+    align-content: center;
+}
+
+.nsh-grid-content .nsh-grid-content-item {
+    padding: 5px 10px;
+    width: 33%;
+    float: left;
+    margin: 0px;
+    align-content: center;
+}
+
+.nsh-grid-content-item span {
+    float: left;
+    padding: 5px 10px;
+    align-content: center;
+}
+
+.material-icons.md-dark { 
+    color: rgba(0, 0, 0, 0.54); 
+    float: left;
+}
+.material-icons.md-dark.md-inactive { 
+    color: rgba(0, 0, 0, 0.26); 
+}
+
