@@ -13,7 +13,8 @@ export class Menu {
 }
 
 const MENU_ITEMS: Menu[] = [
-  { name: 'Home', route: '/' },
+  { name: 'Home', route: '/home' },
+  { name: 'Portfolio', route: '/portfolio' },
   { name: 'Sample Page', route: '/sample' },
   { name: 'Contact', route: '' }
 ];

@@ -1,0 +1,45 @@
+.nsh-portfolio-edit-content {
+    margin-top: 30px;
+    width: 100%;
+    padding: 20px;
+
+}
+
+form {
+    padding: 20px 50px;
+}
+
+table {
+    width: 100%;
+}
+
+md-input {
+    width: 90%;
+}
+
+.nsh-edit-menu {
+    padding-left: 0;
+    margin-bottom: 20px;
+    border-right: 1px solid #ddd;
+}
+
+.nsh-edit-menu-item {
+    position: relative;
+    display: block;
+    background-color: white;
+    line-height: 48px;
+    height: 48px;
+    font-size: 16px;
+    font-weight: 550;
+    cursor: pointer;
+    box-sizing: border-box;
+}
+
+.nsh-edit-menu-item.active {
+    border-bottom: 2px solid #F44336;
+    background-color: #FFF0F2;
+}
+
+div.nsh-edit-section-content:not(.active){
+  display: none;
+}

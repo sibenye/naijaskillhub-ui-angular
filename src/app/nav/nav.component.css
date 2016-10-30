@@ -5,7 +5,7 @@ Header Main Components
 -------------------------------- */
 .nsh-header {
   position: fixed;
-  /*z-index: 2;*/
+  z-index: 2;
   top: 0;
   left: 0;
   width: 100%;
@@ -13,13 +13,12 @@ Header Main Components
   background-color: white;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  border-bottom: 3px solid #F44336;
 }
 @media only screen and (min-width: 850px) {
   .nsh-header {
     height: 70px;
-    background-color: white;
-    position: fixed;
-    z-index: 2;
+    /*z-index: 2;*/
   }
 }
 
@@ -47,6 +46,7 @@ Header Main Components
     height: auto;
     background: none;
     float: right;
+    margin-right: 20px;
 }
 
 .nsh-nav-large-screen ul {
@@ -59,7 +59,6 @@ Header Main Components
     display: inline-block;
     margin-left: 1em;
     height: auto;
-    font-weight: 600;
     line-height: normal;
     background: white;
     padding: .6em 1em;

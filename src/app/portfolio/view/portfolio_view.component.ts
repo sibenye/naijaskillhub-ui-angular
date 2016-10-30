@@ -7,5 +7,12 @@ import {Component} from '@angular/core';
   styleUrls: ['portfolio_view.component.css']
 })
 export class NSH_PortfolioViewComponent {
+
+    selected: string;
+
+    constructor() {
+        this.selected = 'photos';
+
+    }
   
 }

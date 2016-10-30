@@ -17,29 +17,102 @@ html {
 
 body {
   font-size: 1.6rem;
-  font-family: "Open Sans", sans-serif;
-  color: #2c343b;
-  background-color: #EEEEEE;
+  width: 100%;
+  font-family: "Roboto, Helvetica Neue", Helvetica, Arial, "Open Sans", sans-serif;
+  color: #333;
+  background-color: white;
+}
+
+h1 {
+    font-size: 3.1em;
+    font-weight: 700;
+    line-height: 1.1em;
+    margin-bottom: 1.5%;
 }
 
 a {
   color: #d44457;
   text-decoration: none;
+  cursor: pointer;
 }
 
 img {
   max-width: 100%;
-}
-
-clear {
-  clear: both;
+  cursor: pointer;
 }
 
 .divider {
   height: 50px;
 }
 
-.container {
-  background-color: white;
+/* grid */
+.nsh-row {
+  margin: 0 -10px;
+  margin-bottom: 20px;
+}
+.nsh-row:last-child {
+  margin-bottom: 0;
+}
+[class*="col-"] {
+  padding: 10px;
 }
 
+@media all and ( min-width: 750px ) {
+
+  .col-2-3 {
+    float: left;
+    width: 66.66%;
+  }
+  .col-1-2 {
+    float: left;
+    width: 50%;
+  }
+  .col-1-3 {
+    float: left;
+    width: 33.33%;
+  }
+  .col-1-4 {
+    float: left;
+    width: 25%;
+  }
+  .col-1-8 {
+    float: left;
+    width: 12.5%;
+  }
+
+}
+/*end grid*/
+
+/* content */
+.nsh-content {
+    margin: 0 auto;
+    width: 90%;
+}
+
+@media all and ( min-width: 750px ) {
+    .nsh-content {
+    width: 90%;
+    }
+}
+
+@media all and ( min-width: 1150px ) {
+    .nsh-content {
+    width: 80%;
+    }
+}
+
+@media all and ( min-width: 1450px ) {
+    .nsh-content {
+    width: 75%;
+    }
+}
+
+@media all and ( min-width: 1800px ) {
+    .nsh-content {
+    width: 60%;
+    }
+}
+
+.nsh-opacity {
+  opacity: 0.7;
+}

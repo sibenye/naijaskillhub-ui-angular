@@ -7,5 +7,12 @@ import {Component} from '@angular/core';
   styleUrls: ['portfolio_edit.component.css']
 })
 export class NSH_PortfolioEditComponent {
+
+  selected: string;
+
+  constructor() {
+    this.selected = 'profile';
+
+  }
   
 }
