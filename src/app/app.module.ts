@@ -2,7 +2,8 @@ import {NgModule} from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
 import {MaterialModule} from '@angular/material';
 import { RouterModule }   from '@angular/router';
-import { ResponsiveModule } from 'ng2-responsive';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import {ResponsiveModule} from 'ng2-responsive';
 
 import { ToggleTemplateDirective } from './directives/toggleTemplate.directive';
 
@@ -24,13 +25,18 @@ import {NSH_VideosViewSectionComponent} from './portfolio';
 import {NSH_PhotosViewSectionComponent} from './portfolio';
 import {NSH_CreditsViewSectionComponent} from './portfolio';
 import {NSH_PhysicViewSectionComponent} from './portfolio';
+import {NSH_RegisterComponent} from './register';
+import {NSH_TalentRegisterComponent} from './register';
+import {NSH_HunterRegisterComponent} from './register';
+import {NSH_LoginComponent} from './login';
 
 @NgModule({
   imports: [
     BrowserModule,
     MaterialModule.forRoot(),
-    ResponsiveModule,
-    RouterModule.forRoot(ROUTES)
+    RouterModule.forRoot(ROUTES),
+    NgbModule.forRoot(),
+    ResponsiveModule
   ],
   declarations: [NSH_AppComponent,
    NSH_NavComponent,
@@ -49,7 +55,11 @@ import {NSH_PhysicViewSectionComponent} from './portfolio';
    NSH_VideosViewSectionComponent,
    NSH_PhotosViewSectionComponent,
    NSH_CreditsViewSectionComponent,
-   NSH_PhysicViewSectionComponent],
+   NSH_PhysicViewSectionComponent,
+   NSH_RegisterComponent,
+   NSH_TalentRegisterComponent,
+   NSH_HunterRegisterComponent,
+   NSH_LoginComponent],
   bootstrap: [NSH_AppComponent],
 })
 export class NSH_AppModule { }

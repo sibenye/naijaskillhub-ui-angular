@@ -1,0 +1,46 @@
+<md-card>
+  <md-card-title>Hunter Registration</md-card-title>
+    <form>
+        <div class="nsh-register-form-content">
+        <md-input placeholder="First name" required>
+            <span md-prefix>
+            <i class="material-icons app-input-icon">person_pin</i>
+            &nbsp;
+            </span>     
+        </md-input><br/>
+        <md-input placeholder="Last name" required>
+            <span md-prefix>
+            <i class="material-icons app-input-icon">person_pin</i>
+            &nbsp;
+            </span>      
+        </md-input><br/>
+
+        <md-input type="email" placeholder="EmailAddress" required>
+            <span md-prefix>
+            <i class="material-icons app-input-icon">email</i>
+            &nbsp;
+            </span>    
+        </md-input><br/>
+        <md-input placeholder="Username" required>
+            <span md-prefix>
+            <i class="material-icons app-input-icon">perm_identity</i>
+            &nbsp;
+            </span>
+        </md-input><br/>
+        <md-input type="password" placeholder="Password" required>
+            <span md-prefix>
+            <i class="material-icons app-input-icon">lock</i>
+            &nbsp;
+            </span> 
+            
+        </md-input><br/>
+        </div>
+        <div class="nsh-register-form-submit">
+            <button md-raised-button color="primary" style="float:right;">Register</button>
+            <a routerLink=''>Cancel</a>
+        </div>
+    </form><br/>
+    <div class="nsh-register-form-footer clear-fix">
+            <p>Already have an account? Then <a routerLink='/login'>login here</a>.</p>
+    </div>
+    </md-card>

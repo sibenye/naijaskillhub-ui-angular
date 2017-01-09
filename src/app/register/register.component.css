@@ -1,0 +1,30 @@
+.nsh-register {
+  margin: 20px auto;
+}
+
+.nsh-register-form-content {
+    text-align: center;
+}
+
+.nsh-register a {
+  color: #d44457;
+}
+
+.nsh-register-form-footer {
+    text-align: center;
+    font-size: 70%;
+    opacity: 0.7;
+}
+
+md-card {
+    width: 70%;
+    margin: 50px auto;
+}
+
+md-card a {
+  color: #d44457;
+}
+
+div.nsh-view-register-form:not(.active){
+  display: none;
+}

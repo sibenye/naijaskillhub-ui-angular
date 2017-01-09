@@ -1,0 +1,23 @@
+<div class="container">
+    <div class="nsh-register">
+        <h3>Join Naija Skill Hub</h3>
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="col-sm-6 col-xs-12">
+                    <p>Looking to be discovered? <a (click)="selected='talent';">Register as a Talent</a></p>
+                </div>
+                <div class="col-sm-6 col-xs-12">
+                    <p>Looking for talent? <a (click)="selected='hunter';">Register as a Talent Hunter</a></p>
+                </div>
+            </div>
+        </div>
+    
+
+    <div class="nsh-view-register-form"  [ngClass]="{'active': selected==='talent'}">
+    <nsh-talent-register></nsh-talent-register>
+    </div>
+    <div class="nsh-view-register-form"  [ngClass]="{'active': selected==='hunter'}">
+    <nsh-hunter-register></nsh-hunter-register>
+    </div>
+    </div>
+</div>

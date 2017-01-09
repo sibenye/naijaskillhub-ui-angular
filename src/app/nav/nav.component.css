@@ -3,68 +3,38 @@
 Header Main Components
 
 -------------------------------- */
-.nsh-header {
-  position: fixed;
-  z-index: 2;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 50px;
+.navbar {
   background-color: white;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
   border-bottom: 3px solid #F44336;
-}
-@media only screen and (min-width: 850px) {
-  .nsh-header {
-    height: 70px;
-    /*z-index: 2;*/
-  }
+  padding-bottom: 0px;
 }
 
-#nsh-logo {
-  float: left;
-  margin: 13px 0 0 5%;
-}
-#nsh-logo img {
-  display: block;
-}
-@media only screen and (min-width: 850px) {
-  #cd-logo {
-    margin: 23px 0 0 5%;
-  }
+.navbar-brand {
+  margin-bottom: 5px;
 }
 
-.nsh-nav-small-screen {
-  float: right;
-  background: none;
-  margin-right: 20px;
-}
-
-.nsh-nav-large-screen {
-    width: auto;
-    height: auto;
-    background: none;
-    float: right;
-    margin-right: 20px;
-}
-
-.nsh-nav-large-screen ul {
-    position: static;
-    width: auto;
-    line-height: 70px;
-}
-
-.nsh-nav-large-screen ul li {
+.navbar ul {
+    margin-bottom: 0px;
     display: inline-block;
-    margin-left: 1em;
-    height: auto;
-    line-height: normal;
-    background: white;
-    padding: .6em 1em;
-    border-top: none;
+}
+
+.navbar ul li {
+    padding: 5px;
+}
+
+.navbar ul li a {
+    padding: 5px;
+}
+
+.navbar ul li a.active {
+    border-bottom: 2px solid #F44336;
+    background-color: #FFF0F2;
 }
   
 .nsh-header-divider {
   height: 60px;
+}
+
+.nsh-hide-menu-item {
+  display: none;
 }

@@ -1,0 +1,33 @@
+.nsh-login {
+  margin: 20px auto;
+}
+
+.nsh-login-form-content {
+    text-align: center;
+}
+
+.nsh-login a {
+  color: #d44457;
+}
+
+.nsh-login-form-footer {
+    text-align: center;
+    font-size: 70%;
+    opacity: 0.7;
+}
+
+md-card {
+    width: 70%;
+    margin: 50px auto;
+}
+
+md-card a {
+  color: #d44457;
+}
+
+@media all and (min-width: 768px ) {
+    md-card {
+        width: 50%;
+    }
+}
+
