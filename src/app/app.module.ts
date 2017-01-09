@@ -26,8 +26,6 @@ import {NSH_PhotosViewSectionComponent} from './portfolio';
 import {NSH_CreditsViewSectionComponent} from './portfolio';
 import {NSH_PhysicViewSectionComponent} from './portfolio';
 import {NSH_RegisterComponent} from './register';
-import {NSH_TalentRegisterComponent} from './register';
-import {NSH_HunterRegisterComponent} from './register';
 import {NSH_LoginComponent} from './login';
 
 @NgModule({
@@ -57,8 +55,6 @@ import {NSH_LoginComponent} from './login';
    NSH_CreditsViewSectionComponent,
    NSH_PhysicViewSectionComponent,
    NSH_RegisterComponent,
-   NSH_TalentRegisterComponent,
-   NSH_HunterRegisterComponent,
    NSH_LoginComponent],
   bootstrap: [NSH_AppComponent],
 })
