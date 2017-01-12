@@ -138,3 +138,12 @@ img {
 .nsh-opacity {
   opacity: 0.7;
 }
+
+.nsh-form-inline-validation-info {
+  color: red;
+  font-size: 9px;
+}
+
+.nsh-small-icon {
+  font-size: 11px;
+}

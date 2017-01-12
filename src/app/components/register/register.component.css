@@ -7,7 +7,7 @@
 }
 
 .nsh-register a {
-  color: #d44457;
+  color: #FF5722;
 }
 
 .nsh-register-form-footer {
@@ -22,9 +22,9 @@ md-card {
 }
 
 md-card a {
-  color: #d44457;
+  color: #FF5722;
 }
 
-div.nsh-view-register-form:not(.active){
-  display: none;
+.app-input-icon {
+  color: #FF5722;
 }

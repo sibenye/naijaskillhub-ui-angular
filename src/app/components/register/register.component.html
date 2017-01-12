@@ -1,0 +1,84 @@
+<div class="container">
+    <div class="nsh-register">
+        <h3>Join Naija Skill Hub</h3>
+        <div class="row">
+            <div class="col-xs-12">
+                <p><span style="font-weight: bold">Looking to be discovered?</span> <i>Register as a Talent</i></p><br/>
+                <p><span style="font-weight: bold">Looking for talent?</span> <i>Register as a Talent Hunter</i></p>
+                
+            </div>
+        </div>
+    
+
+        <md-card>
+            <md-card-title>Registration</md-card-title><br/>
+            
+                <form (ngSubmit)="onSubmit()" #registerForm="ngForm">
+                    <div class="nsh-register-form-content">
+                        <div>
+                            <md-select placeholder="Member Type" required [(ngModel)]="register.accountType" name="accountType">
+                                <md-option *ngFor="let type of accountTypes" [value]="type">{{type}}</md-option>
+                            </md-select>
+                            
+                        </div>
+                        <md-input placeholder="First name" required [(ngModel)]="register.firstName" name="firstName" minlength=2 maxlength=20>
+                            <span md-prefix>
+                            <i class="material-icons app-input-icon">person_pin</i>
+                            &nbsp;
+                            </span>  
+                        </md-input>
+                        
+                        <br/>
+                        <md-input placeholder="Last name" required [(ngModel)]="register.lastName" name="lastName" minlength=2 maxlength=20>
+                            <span md-prefix>
+                            <i class="material-icons app-input-icon">person_pin</i>
+                            &nbsp;
+                            </span>      
+                        </md-input><br/>
+                        <md-input type="email" placeholder="EmailAddress" required  [(ngModel)]="register.emailAddress" name="emailAddress" minlength=8>
+                            <span md-prefix>
+                            <i class="material-icons app-input-icon">email</i>
+                            &nbsp;
+                            </span>  
+                            <span md-suffix [hidden]="!submitted || (submitted && validEmail)" class="nsh-form-inline-validation-info">
+                            <i class="material-icons app-input-icon nsh-small-icon">close</i> Invalid emailAddress
+                            </span>  
+                        </md-input>
+                        
+                        <br/>
+                        <md-input type="password" placeholder="Password" required [(ngModel)]="register.password" name="password" minlength=8 maxlength=100>
+                            <span md-prefix>
+                            <i class="material-icons app-input-icon">lock</i>
+                            &nbsp;
+                            </span>
+                            <span md-suffix [hidden]="(submitted && !validPassword)" md-tooltip="must be at least 8 xters" tooltip-position="before">
+                            <i class="material-icons app-input-icon">info_outline</i>
+                            </span>
+                            <span md-suffix [hidden]="!submitted || (submitted && validPassword)" class="nsh-form-inline-validation-info">
+                            <i class="material-icons app-input-icon nsh-small-icon">close</i> Does not meet password requirement
+                            </span> 
+                        </md-input><br/>
+                        <md-input type="password" placeholder="Confirm Password" required [(ngModel)]="passwordConfirm" name="passwordConfirm" minlength=8 maxlength=100>
+                            <span md-prefix>
+                            <i class="material-icons app-input-icon">lock</i>
+                            &nbsp;
+                            </span>
+                            <span md-suffix [hidden]="!submitted || (submitted && confirmedPassword)" class="nsh-form-inline-validation-info">
+                            <i class="material-icons app-input-icon nsh-small-icon">close</i> Does not match
+                            </span> 
+                        </md-input>
+                        <span></span>
+                        <br/>
+                        <br/>
+                    </div>
+                    <div class="nsh-register-form-submit">
+                        <button md-raised-button color="primary" style="float:right;" [disabled]="!registerForm.form.valid">Register</button>
+                        <a routerLink=''>Cancel</a>
+                    </div>
+                </form><br/><br/>
+                <div class="nsh-register-form-footer clear-fix">
+                        <p>Already have an account? Then <a routerLink='/login'>login here</a>.</p>
+                </div>
+        </md-card>
+    </div>
+</div>
