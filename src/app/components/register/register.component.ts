@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router'
 import { RegisterRequest } from '../../models';
 import { AuthService } from '../../services';
+import { NotificationsService } from 'angular2-notifications';
+import { SimpleNotificationsComponent } from 'angular2-notifications';
 
 
 @Component({
@@ -13,15 +16,17 @@ export class NSH_RegisterComponent {
     validPassword = false;
     confirmedPassword = false;
     submitted = false;
+    spin = false;
     passwordConfirm = '';
     accountTypes = ['talent', 'hunter']
     register :RegisterRequest;
     authToken: string;
     userEmailAddress: string;
-    successResponse = {};
-    errorMessage = null;
 
-    constructor(private authService: AuthService) {
+    constructor(
+        private _authService: AuthService, 
+        private _notificationService: NotificationsService, 
+        private _router: Router) {
         this.clearForm();
     }
 
@@ -30,20 +35,24 @@ export class NSH_RegisterComponent {
         this.register = new RegisterRequest(this.accountTypes[0], 'standard', '', '', '', '');
     }
 
+    resetFlags() {
+        this.validEmail = false;
+        this.validPassword = false;
+        this.confirmedPassword = false;
+    }
+
     onSubmit(){
         this.submitted = true;
+        this.resetFlags();
         if (this.validateFormInput()){
             //start spin
+            this.spin = true;
             //make http request
             this.registerUser();
-        }
-        //stop spin
-        if (this.errorMessage) {
-            //show error notification
         } else {
-            //save authToken and emailAddress as cookies
-            //redirect to profile page.
+            this.submitted = false;
         }
+        
     }
 
     validateFormInput(): boolean {
@@ -73,14 +82,24 @@ export class NSH_RegisterComponent {
     }
 
     registerUser () {
-    
-    this.authService.registerUser(this.register)
-                     .subscribe(
-                       response  => this.successResponse = response,
-                       error =>  this.errorMessage = <any>error);
-  }
+        this._authService.registerUser(this.register)
+                        .subscribe(
+                        response  => this.handleResponse(response, null),
+                        error =>  this.handleResponse(null,error));
+    }
 
-    // TODO: Remove this when we're done
-  //get diagnostic() { return JSON.stringify(this.register); }
-  
+    handleResponse(response, error) {
+        if (error) {
+            //show error notification
+            this._notificationService.error('Invalid Request', error);
+        } else if (response) {
+            //save authToken and emailAddress as cookies
+            this._authService.storeAuthToken(response.authToken);
+            //redirect to profile page.
+            this._router.navigateByUrl('portfolio/edit');
+        }
+        //stop spin
+        this.spin = false;
+        this.submitted = false;
+    }
 }

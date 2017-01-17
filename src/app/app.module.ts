@@ -7,6 +7,8 @@ import { RouterModule }   from '@angular/router';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ResponsiveModule } from 'ng2-responsive';
 import { HttpModule, JsonpModule } from '@angular/http';
+import { SimpleNotificationsModule } from 'angular2-notifications';
+import { LocalStorageModule } from 'angular-2-local-storage';
 
 
 //import NSH Components
@@ -33,8 +35,9 @@ import {
     NSH_LoginComponent
 } from './components';
 
-//import directives
+//import directives, providers, and services
 import { ToggleTemplateDirective } from './directives/toggleTemplate.directive';
+import { AuthService } from './services';
 
 @NgModule({
   imports: [
@@ -46,6 +49,11 @@ import { ToggleTemplateDirective } from './directives/toggleTemplate.directive';
     ResponsiveModule,
     HttpModule,
     JsonpModule,
+    SimpleNotificationsModule,
+    LocalStorageModule.withConfig({
+            prefix: 'nsh-app',
+            storageType: 'localStorage'
+        })
   ],
   declarations: [
     NSH_AppComponent,
@@ -69,6 +77,7 @@ import { ToggleTemplateDirective } from './directives/toggleTemplate.directive';
     NSH_RegisterComponent,
     NSH_LoginComponent
   ],
-  bootstrap: [ NSH_AppComponent ],
+  providers: [AuthService],
+  bootstrap: [ NSH_AppComponent ]
 })
 export class NSH_AppModule { }

@@ -147,3 +147,9 @@ img {
 .nsh-small-icon {
   font-size: 11px;
 }
+
+.nsh-app-spinner-sm {
+  height: 30px !important;
+  width: 30px !important;
+  display: inline-block !important;
+}
