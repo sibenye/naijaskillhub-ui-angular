@@ -14,6 +14,6 @@
 			<button *ngFor="let menuItem of menuItems" md-menu-item [routerLink]="menuItem.route">{{menuItem.name}}</button>			
 		</md-menu>
 	</span>-->
-	<ul class="nav navbar-nav float-xs-right"><li class="nav-item"><a class="nav-link" routerLink="/login" [routerLinkActive]="['nsh-hide-menu-item']">Sign In</a></li></ul>
-	<button type="button" class="navbar-btn float-xs-right" md-raised-button color="primary" routerLink="/register" [routerLinkActive]="['nsh-hide-menu-item']">Join free</button>
+	<ul [hidden]="isLoggedIn()" class="nav navbar-nav float-xs-right"><li class="nav-item"><a class="nav-link" routerLink="/login" [routerLinkActive]="['nsh-hide-menu-item']">Sign In</a></li></ul>
+	<button [hidden]="isLoggedIn()" type="button" class="navbar-btn float-xs-right" md-raised-button color="primary" routerLink="/register" [routerLinkActive]="['nsh-hide-menu-item']">Join free</button>
 </nav>

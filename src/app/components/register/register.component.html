@@ -72,7 +72,10 @@
                         <br/>
                     </div>
                     <div class="nsh-register-form-submit">
-                        <button md-raised-button color="primary" style="float:right;" [disabled]="!registerForm.form.valid">Register</button>
+                        <div style="float:right;">
+                        <md-progress-spinner *ngIf="spin" class="nsh-app-spinner-sm" mode="indeterminate" color="accent"></md-progress-spinner>
+                        <button md-raised-button color="primary" [disabled]="!registerForm.form.valid || submitted">Register</button>
+                        </div>
                         <a routerLink=''>Cancel</a>
                     </div>
                 </form><br/><br/>

@@ -16,4 +16,13 @@ export class NSH_AppComponent {
         window.scroll(0, 0);
     });
   }
+
+  public notificationOptions = {
+      position: ["bottom", "right"],
+      timeOut: 7000,
+      lastOnBottom: true,
+      maxLength: 50,
+      preventDuplicates: true,
+      preventLastDuplicates: "visible"
+  }
 }
