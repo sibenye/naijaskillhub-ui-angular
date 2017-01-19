@@ -4,9 +4,10 @@ Header Main Components
 
 -------------------------------- */
 .navbar {
-  background-color: white;
-  border-bottom: 3px solid #F44336;
-  padding-bottom: 0px;
+  background-color: #FF5722;
+  padding-bottom: 10px;
+  color: white;
+  z-index: 2;
 }
 
 .navbar-brand {
@@ -24,10 +25,11 @@ Header Main Components
 
 .navbar ul li a {
     padding: 5px;
+    color: white;
 }
 
 .navbar ul li a.active {
-    border-bottom: 2px solid #F44336;
+    border-bottom: 2px solid #FF5722;
     background-color: #FFF0F2;
 }
   
@@ -37,4 +39,12 @@ Header Main Components
 
 .nsh-hide-menu-item {
   display: none;
+}
+
+.nsh-nav-dropdown-menu {
+  z-index: 3;
+}
+
+md-icon.nsh-account-icon {
+  font-size: 30px;
 }
