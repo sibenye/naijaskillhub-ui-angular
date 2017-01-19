@@ -35,12 +35,6 @@ export class NSH_RegisterComponent {
         this.register = new RegisterRequest(this.accountTypes[0], 'standard', '', '', '', '');
     }
 
-    resetFlags() {
-        this.validEmail = false;
-        this.validPassword = false;
-        this.confirmedPassword = false;
-    }
-
     onSubmit(){
         this.submitted = true;
         this.resetFlags();
@@ -55,7 +49,13 @@ export class NSH_RegisterComponent {
         
     }
 
-    validateFormInput(): boolean {
+    private resetFlags() {
+        this.validEmail = false;
+        this.validPassword = false;
+        this.confirmedPassword = false;
+    }
+
+    private validateFormInput(): boolean {
         //validate email
         this.validEmail = this.validateEmail(this.register.emailAddress);
         //validate password
@@ -66,34 +66,34 @@ export class NSH_RegisterComponent {
         return (this.validEmail && this.validPassword && this.confirmedPassword);
     }
 
-    validateEmail(email: string): boolean{
+    private validateEmail(email: string): boolean{
         var EMAIL_REGEXP = /^[a-z0-9!#$%&'*+\/=?^_`{|}~.-]+@[a-z0-9]([a-z0-9-]*[a-z0-9])?(\.[a-z0-9]([a-z0-9-]*[a-z0-9])?)*$/i;
 
         return (email.length > 4 && EMAIL_REGEXP.test(email));
 
     }
 
-    validatePassword(password: string): boolean {
+    private validatePassword(password: string): boolean {
         return (password.length > 7 && password.length <= 100);
     }
 
-    confirmPassword(password: string, passwordConfirm: string): boolean {
+    private confirmPassword(password: string, passwordConfirm: string): boolean {
         return password === passwordConfirm;
     }
 
-    registerUser () {
+    private registerUser () {
         this._authService.registerUser(this.register)
                         .subscribe(
                         response  => this.handleResponse(response, null),
                         error =>  this.handleResponse(null,error));
     }
 
-    handleResponse(response, error) {
+    private handleResponse(response, error) {
         if (error) {
             //show error notification
-            this._notificationService.error('Invalid Request', error);
+            this._notificationService.error(error.message, error.messageDetail);
         } else if (response) {
-            //save authToken and emailAddress as cookies
+            //save authToken
             this._authService.storeAuthToken(response.authToken);
             //redirect to profile page.
             this._router.navigateByUrl('portfolio/edit');

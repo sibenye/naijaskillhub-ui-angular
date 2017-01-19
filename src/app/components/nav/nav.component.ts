@@ -33,4 +33,8 @@ export class NSH_NavComponent {
   isLoggedIn() {
     return this._authService.getAuthStatus();
   }
+
+  logOut() {
+    this._authService.logOut();
+  }
 }
