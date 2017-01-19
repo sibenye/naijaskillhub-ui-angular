@@ -1,54 +1,31 @@
 import { Injectable }     from '@angular/core';
-import { Http, Response } from '@angular/http';
+import { Router } from '@angular/router'
 import { Observable }     from 'rxjs/Observable';
-import { Headers, RequestOptions } from '@angular/http';
-// Add the RxJS Observable operators.
-import '../rxjs-operators';
+import { HttpService } from './http.service';
 import { RegisterRequest } from '../models';
 import { LocalStorageService } from 'angular-2-local-storage';
 
 @Injectable()
 export class AuthService {
-    private registerUrl = 'http://naijaskillhub-api/register';  // URL to web API
+    private registerUrl = '/register';
+    private loginUrl = '/login';
     public isAuthenticated = false;
 
-    constructor (private _http: Http, private _localStorageService: LocalStorageService) {}
+    constructor (private _httpService: HttpService,
+    private _localStorageService: LocalStorageService,
+    private _router: Router) {}
 
     registerUser (request: RegisterRequest): Observable<any> {
         let data = JSON.stringify(request);
-        let headers = new Headers({ 'Content-Type': 'application/json' });
-        let options = new RequestOptions({ headers: headers });
-        return this._http.post(this.registerUrl, data, options)
-                        .map(this.extractData)
-                        .catch(this.handleError);
+        return this._httpService.makeRequest(data, this.registerUrl);
     }
 
-    private extractData(res: Response) {
-        let body = res.json();
-        return body.response || { };
-    }
-
-    private handleError (error: Response | any) {
-        let errMsg: string;
-        let logMsg: string;
-        if (error instanceof Response) {
-            let body = error.json() || '';
-            logMsg = '';
-            errMsg = 'Unexpected error received from the API';
-            if (body.message) {
-                errMsg = body.message + ': ' + body.messageDetail;
-                logMsg = errMsg;
-            } else {
-                if (body !== '') {
-                    logMsg = errMsg + ': ...' + JSON.stringify(body);
-                }
-            }
-        } else {
-            logMsg = errMsg + ': ' + error.message ? error.message : error.toString();
-        }
-        // TODO: we might use a remote logging infrastructure
-        console.log(logMsg);
-        return Observable.throw(errMsg);
+    login (emailAddress: string, password: string, credType = 'standard'): Observable<any> {
+        let data = {'emailAddress': emailAddress, 
+            'password' : password, 
+            'credentialType': credType
+        };
+        return this._httpService.makeRequest(data, this.loginUrl);
     }
 
     getAuthStatus() {
@@ -65,9 +42,11 @@ export class AuthService {
         return this._localStorageService.get('AUTH-TOKEN');
     }
 
-    public logout() {
+    public logOut() {
         this._localStorageService.remove('AUTH-TOKEN');
         this._localStorageService.set('isLoggedIn', false);
+        //redirect to home page.
+        this._router.navigateByUrl('home');
     }
 
 }

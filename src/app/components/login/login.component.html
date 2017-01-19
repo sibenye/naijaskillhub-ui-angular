@@ -2,16 +2,16 @@
     <div class="nsh-login">
       <md-card>
   <md-card-title>Sign In</md-card-title>
-    <form>
+    <form (ngSubmit)="onSubmit()" #loginForm="ngForm">
         <div class="nsh-login-form-content">
         
-        <md-input placeholder="Username" required>
+        <md-input placeholder="EmailAddress" [(ngModel)]="emailAddress" name="emailAddress" required>
             <span md-prefix>
-            <i class="material-icons app-input-icon">perm_identity</i>
+            <i class="material-icons app-input-icon">email</i>
             &nbsp;
             </span>
         </md-input><br/>
-        <md-input type="password" placeholder="Password" required>
+        <md-input type="password" placeholder="Password" [(ngModel)]="password" name="password" required>
             <span md-prefix>
             <i class="material-icons app-input-icon">lock</i>
             &nbsp;
@@ -20,7 +20,10 @@
         </md-input><br/>
         </div>
         <div class="nsh-login-form-submit">
-            <button md-raised-button color="primary" style="float:right;">Sign In</button>
+            <div style="float:right;">
+            <md-progress-spinner *ngIf="spin" class="nsh-app-spinner-sm" mode="indeterminate" color="accent"></md-progress-spinner>
+            <button md-raised-button color="primary" [disabled]="!loginForm.form.valid || submitted">Sign In</button>
+            </div>
             <a routerLink=''>Cancel</a>
         </div>
     </form><br/>

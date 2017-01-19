@@ -38,6 +38,7 @@ import {
 //import directives, providers, and services
 import { ToggleTemplateDirective } from './directives/toggleTemplate.directive';
 import { AuthService } from './services';
+import { HttpService } from './services';
 
 @NgModule({
   imports: [
@@ -77,7 +78,7 @@ import { AuthService } from './services';
     NSH_RegisterComponent,
     NSH_LoginComponent
   ],
-  providers: [AuthService],
+  providers: [HttpService, AuthService],
   bootstrap: [ NSH_AppComponent ]
 })
 export class NSH_AppModule { }
