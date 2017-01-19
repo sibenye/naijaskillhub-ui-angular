@@ -1,20 +1,15 @@
-<nav class="navbar navbar-light bg-faded navbar-fixed-top" style="background-color: white;">
+<nav class="navbar navbar-light bg-faded navbar-fixed-top">
 	<a class="navbar-brand" href="#"><img alt="Brand" src="assets/img/cd-logo.svg" ></a>
-	<ul class="nav navbar-nav">
-		<li class="nav-item" *ngFor="let menuItem of menuItems"><a class="nav-link" [routerLinkActive]="['active']" [routerLink]="menuItem.route">{{menuItem.name}}</a></li>
-
-		
-	</ul>
-	<!--<span *responsive="{sizes:{min:1,max:768}}">
-		<nav [md-menu-trigger-for]="menu" >
-		<img src="../../assets/img/cd-icon-menu.svg" >
-		</nav>	
-        
-		<md-menu x-position="before" #menu="mdMenu">
-			<button *ngFor="let menuItem of menuItems" md-menu-item [routerLink]="menuItem.route">{{menuItem.name}}</button>			
+	
+	<div [hidden]="!isLoggedIn()" class="float-xs-right">
+		<button md-icon-button [mdMenuTriggerFor]="menu">
+			<md-icon class="nsh-account-icon">account_circle</md-icon>
+		</button>
+		<md-menu  #menu="mdMenu" class="nsh-nav-dropdown-menu">
+			<a md-menu-item *ngFor="let menuItem of menuItems" [routerLinkActive]="['active']" [routerLink]="menuItem.route" >{{menuItem.name}}</a>
+			<a md-menu-item (click)="logOut()">Sign out</a>
 		</md-menu>
-	</span>-->
-	<ul [hidden]="isLoggedIn()" class="nav navbar-nav float-xs-right"><li class="nav-item"><a class="nav-link" routerLink="/login" [routerLinkActive]="['nsh-hide-menu-item']">Log In</a></li></ul>
-	<button [hidden]="isLoggedIn()" type="button" class="navbar-btn float-xs-right" md-raised-button color="primary" routerLink="/register" [routerLinkActive]="['nsh-hide-menu-item']">Join free</button>
-	<button [hidden]="!isLoggedIn()" (click)="logOut()" type="button" class="navbar-btn float-xs-right" md-raised-button color="primary" >Log Out</button>
+	</div>
+	<ul [hidden]="isLoggedIn()" class="float-xs-right"><li class="nav-item"><a class="nav-link" routerLink="/login" [routerLinkActive]="['nsh-hide-menu-item']">Log In</a></li></ul>
+	<button [hidden]="isLoggedIn()" type="button" class="navbar-btn float-xs-right" md-raised-button color="accent" routerLink="/register" [routerLinkActive]="['nsh-hide-menu-item']">Join free</button>
 </nav>

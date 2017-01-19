@@ -15,9 +15,8 @@ export class Menu {
 }
 
 const MENU_ITEMS: Menu[] = [
-  { name: 'Portfolio', route: '/portfolio' },
-  { name: 'Sample Page', route: '/sample' },
-  { name: 'Contact', route: '/contact' }
+  { name: 'My Account', route: '/portfolio' },
+  { name: 'Sample Page', route: '/sample' }
 ];
 
 @Component({
