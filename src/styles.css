@@ -16,7 +16,7 @@ html {
 }
 
 body {
-  padding-top: 45px;
+  padding-top: 70px;
   font-size: 1.6rem;
   width: 100%;
   font-family: "Roboto, Helvetica Neue", Helvetica, Arial, "Open Sans", sans-serif;
@@ -152,4 +152,12 @@ img {
   height: 30px !important;
   width: 30px !important;
   display: inline-block !important;
+}
+
+.nsh-float-left {
+  float: left;
+}
+
+.nsh-float-right {
+  float: right;
 }

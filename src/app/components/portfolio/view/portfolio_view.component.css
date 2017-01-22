@@ -1,156 +1,120 @@
-.nsh-content md-card {
-  margin: 20px;
+.nsh-profile{
+    padding: 10px;
 }
 
-.nsh-content md-card-content {
-  font-size: 1.6rem;
-  line-height: 20px;
-}
-
-.nsh-content md-card-title {
-  cursor: pointer;
-}
-
-.more {
-    display: none;
-}
-
-.hidden {
-    display: none;
-}
-
-.show {
-    display: block;
-}
-
-.nsh-portfolio-header {
-    width: 100%;
-    height: auto;
-    background-color: #F44336;
-}
-
-.nsh-verification-section {
-    background-color: #F5F5F5;
-    margin: 0 auto;
-    height: auto;
-    border-bottom: 1px solid #ddd;
-    text-align: center;
-}
-
-.nsh-verification-section table {
-    width: 40%;
-    font-size: 60%;
-    text-align: center;
-    margin: 0 auto;
-}
-
-nsh-verification-section table td {
-    padding: 0px 5px;
-}
-
-.nsh-portfolio-header-left {
-    padding: 25px 0px 0px 25px;
-    text-align: center;
-}
-
-.nsh-portfolio-header-left img {
-    /*margin: 0 auto;*/
-    border-radius: 50%;
-    border: 5px solid white;
-   /* width: 150px;
-    height: 150px;*/
-}
-
-.nsh-portfolio-header-data {
-    margin-top: 0;
-    padding-left: 25px;
-    text-align: center;
-    height: 100%;
-    width: 100%;
-}
-
-.nsh-portfolio-header-data h1 {
-    font-size: 2.5em;
-    color: white;
-    font-weight: bold;
-}
-
-.nsh-portfolio-header-data h1 md-icon {
-    cursor: pointer;
-}
-
-.nsh-portfolio-header-data .nsh-portfolio-header-data-skills span {
-    background-color: white;
-    color: #349DF2;
-    padding: 5px 10px;
-    border-radius: 20px;
-    align-content: center;
-    font-size: 1.3em;
-}
-
-.nsh-portfolio-header-data .nsh-portfolio-header-data-location span {
-    font-size: 1.6em;
-    color: white;
-    font-weight: bold;
-    align-content: center;
-    margin-top: 5px;
-}
-
-.material-icons.md-light { 
-    color: rgba(255, 255, 255, 1);
-}
-
-.material-icons.md-dark { 
-    color: rgba(0, 0, 0, 0.54); 
-}
-
-@media all and ( min-width: 768px ) {
-
-    .nsh-portfolio-header-data {
-        margin-top: 100px;
-        text-align: left;
+@media all and ( min-width: 991px ) {
+    .nsh-profile{
+    width: 80%;
     }
 }
 
-.nsh-portfolio-edit-link {
-    color: white;
-    font-size: 12px;
-    cursor: pointer;
+@media all and ( min-width: 1200px ) {
+    .nsh-profile{
+    width: 60%;
+    }
 }
 
-.nsh-bio-section {
-    width: 60%;
+.nsh-profile-header table {
+    font-size: 60%;
+    text-align: center;
+}
+
+.nsh-profile-header table td {
+    padding: 0px 5px;
+}
+
+.nsh-verification-section {
+    font-size: 12px;
+    
+    padding-bottom: 10px;
+    
+}
+
+.nsh-verification-section md-icon {
+    font-size: 15px;
+    font-weight: bold;
+    width: 15px;
+    height: 15px;
+}
+
+.nsh-verification-section td {
+    border-right: 1px solid #dddddd;
+}
+
+
+md-card.nsh-profile-pic-section {
+    padding: 0px;
+}
+
+md-card.nsh-profile-pic-section img {
+    margin: 0px 0px 0px 0px;
+    max-height: 290px;
+}
+
+.nsh-portfolio-section {
+    padding: 10px 20px;
     text-align: left;
     line-height: 25px;
-    padding: 30px;
     margin: 0 auto;
     opacity: 0.8;
 }
 
-.nsh-view-menu {
-    padding-left: 0;
-    margin-bottom: 20px;
-    border-right: 1px solid #ddd;
-}
-
-.nsh-view-menu-item {
-    position: relative;
-    display: block;
-    background-color: white;
-    line-height: 48px;
-    height: 48px;
+.nsh-profile-content {
+    padding: 10px;
     font-size: 16px;
-    font-weight: 550;
-    cursor: pointer;
-    box-sizing: border-box;
+    border-top: 1px solid #FF5722;
+    border-bottom: 1px solid #FF5722;
 }
 
-.nsh-view-menu-item.active {
-    border-bottom: 2px solid #F44336;
-    background-color: #FFF0F2;
+.nsh-skill-list-section {
+    
 }
 
-div.nsh-view-section-content:not(.active){
-  display: none;
+.nsh-social-icons-section {
+    padding-top: 10px;
 }
+
+.nsh-location-section, .nsh-email-section {
+    padding-top: 5px;
+    opacity: 0.5;
+    vertical-align: middle;
+}
+
+.nsh-profile-content md-icon {
+    font-size: 18px;
+    width: 20px;
+    height: 18px;
+    display: block;
+}
+
+.nsh-social-icons-section {
+    padding-top: 10px;
+}
+
+.nsh-social-icons-section img {
+    width: 20px;
+    height: 20px;
+}
+
+.nsh-profile-footer {
+    padding: 10px;
+}
+
+.nsh-profile-footer table tr td {
+    padding: 0px 10px 0px 10px;
+    text-align: center;
+}
+
+.nsh-profile-footer .nsh-profile-footer-numbers {
+    color: #FF5722;
+    font-weight: bold;
+}
+
+.nsh-profile-footer .nsh-profile-footer-topics {
+    opacity: 0.5;
+}
+
+
+
+
 

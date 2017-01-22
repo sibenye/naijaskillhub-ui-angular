@@ -1,127 +1,123 @@
-<div class="nsh-portfolio-header">
+<div>
     <div class="container">
-    <div class="row">
-        <div class="col-xs-12">
-            <section>
-                <div class="col-sm-4 col-xs-12">
-                    <div class="nsh-portfolio-header-left">
-                        <img src="http://lorempixel.com/480/640/people" width="250" height="250">
-                    </div>
+        <div class="row">
+                <div class="col-lg-3 col-md-4 col-sm-5">
+                    <md-card class="nsh-profile-pic-section">
+                        <img md-card-image src="http://lorempixel.com/480/640/sports">
+                    </md-card>
                 </div>
-                <div class="col-sm-8 col-xs-12">
-                    <div class="nsh-portfolio-header-data">
-                        <h1>Hayley H 
-                            <img title="Verified User" src="../../assets/img/verified_user.png" width="35" height="35"> </h1><br/>
-                        <div class="nsh-portfolio-header-data-skills">
-                            <div><span>Actor, Dancer</span></div>
-                        </div><br/>
-                        <div class="clearfix"></div>
-                        <div class="nsh-portfolio-header-data-location">
-                            <div><span>Ikeja, Lagos</span></div>
-                        </div>
-                        <div class="nsh-portfolio-edit-link"><span routerLink="/portfolio/edit"><md-icon>edit</md-icon>...edit portfolio</span></div>
-                    </div>
-                </div>
-            </section>
-        </div>
-    </div>
-    </div>
-</div>
-<div class="nsh-container">
-        <div class="nsh-verification-section">
-                <div class="row">
-                    <div class="col-sm-12">
-                <table>
-                <tr>
-                    <td>
-                        <md-icon>desktop_windows</md-icon>
-                        <br/>
-                        <span class="nsh-opacity">Social Verification</span>
-                    </td>
-                    <td>
-                        <md-icon>phone_iphone</md-icon>
-                        <br/>
-                        <span class="nsh-opacity">Phone Verification</span>
-                    </td>
-                    <td>
-                        <md-icon>verified_user</md-icon>
-                        <br/>
-                        <span class="nsh-opacity">ID Verification</span>
-                    </td>
-                </tr>
-                <tr>
-                    <td><md-icon>check</md-icon></td>
-                    <td><md-icon>check</md-icon></td>
-                    <td><md-icon>check</md-icon></td>
-                </tr>
-                </table>
-                    </div>
-                </div>
-        </div>
-        <div class="container">
-            <div class="nsh-bio-section">
-                <p>Sydney based Model and Actress. I have a passion for the Arts industry and have had a range of experience behind the Camera. Projects ranging from Commercial, Music Video, Theatre, Film, Television, Campaigns, Editorial and Online Store experience. I am confident and bubbly aiming to meet the individual needs of each job. Paid work only.</p>
-                <p>...This is all visible content... 
-                <a id="example-show" class="showLink" 
-                onclick="showHide('example');return false;">See more.</a>
-                </p>
-                <div id="example" class="more">
-                    <p>...This content is hidden by default...</p>
-                    <p><a id="example-hide" class="hideLink" 
-                    onclick="showHide('example');return false;">Hide this content.</a></p>
-                </div>
-            </div>
-            <div class="nsh-portfolio-section">
-                <div class="row">
-                    <div class="col-xs-12">
-                        <div class="col-sm-3 col-xs-12">
-                        <div class="nsh-view-menu">
-                            <div class="nsh-view-menu-item text-center" [ngClass]="{'active': selected==='photos'}" (click)="selected='photos';">
-                                <span class="nsh-opacity">Photos</span>
+                <div class="col-lg-9 col-md-8 col-sm-7 nsh-bio-section">
+                    <md-card class="nsh-profile">
+                        <div class="nsh-profile-header"><h4>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <span class="col-6">
+                                    Hayley
+                                </span>
+                                <span class="col-6">
+                                    Ukachukwu
+                                </span>
                             </div>
-                            <div class="nsh-view-menu-item text-center" [ngClass]="{'active': selected==='videos'}" (click)="selected='videos';">
-                                <span class="nsh-opacity">Videos</span>
-                            </div>
-                            <div class="nsh-view-menu-item text-center" [ngClass]="{'active': selected==='voice_clips'}" (click)="selected='voice_clips';">
-                                <span class="nsh-opacity">Voice Clips</span>
-                            </div>
-                            <div class="nsh-view-menu-item text-center" [ngClass]="{'active': selected==='credits'}" (click)="selected='credits';">
-                                <span class="nsh-opacity">Credits</span>
-                            </div>
-                             <div class="nsh-view-menu-item text-center" [ngClass]="{'active': selected==='physic'}" (click)="selected='physic';">
-                                <span class="nsh-opacity">Physical Details</span>
-                            </div>
+                        </div></h4>
+                        <div class="nsh-verification-section">
+                        <table>
+                            <tr>
+                                <td>
+                                    <span class="nsh-opacity">Social Verified &nbsp; <md-icon color="accent">check</md-icon></span>
+                                </td>
+                                <td>
+                                    <span class="nsh-opacity">Phone Verified &nbsp; <md-icon>check</md-icon></span>
+                                </td>
+                                <td>
+                                    <span class="nsh-opacity">ID Verified &nbsp; <md-icon>check</md-icon></span>
+                                </td>
+                            </tr>
+                        </table>
                         </div>
                         </div>
-                        <div class="col-sm-9 col-xs-12">
-                        <!-- Photos view section -->
-                        <div class="nsh-view-section-content"  [ngClass]="{'active': selected==='photos'}">
-                            <nsh-view-section-photos></nsh-view-section-photos>
+                        <div class="nsh-profile-content">
+                        <div class="nsh-skill-list-section"><span>Actor, Dancer, Singer</span></div>
+                        <div class="nsh-location-section"><md-icon>place</md-icon>Ikeja, Lagos</div>
+                        <div class="nsh-email-section"><md-icon>email</md-icon>testH@mailinator.com</div>
+                        <div class="nsh-social-icons-section">
+                            <a href="#"><img title="facebook icon" src="../../assets/icon/facebook.svg" width="35"></a>
+                            <a href="#"><img title="twitter icon" src="../../assets/icon/twitter.svg" width="35"></a>
+                            <a href="#"><img title="google-plus icon" src="../../assets/icon/google-plus.svg" width="35"></a>
+                            <a href="#"><img title="instagram icon" src="../../assets/icon/instagram.svg" width="35"></a>
+                            <a href="#"><img title="linkedin icon" src="../../assets/icon/linkedin.svg" width="35"></a>
                         </div>
-                        <!-- Videos view section -->
-                        <div class="nsh-view-section-content" [ngClass]="{'active': selected==='videos'}">
-                            <nsh-view-section-videos></nsh-view-section-videos>
                         </div>
-                        <!-- Voice clips view section -->
-                        <div class="nsh-view-section-content" [ngClass]="{'active': selected==='voice_clips'}">
-                            <nsh-view-section-voiceclips></nsh-view-section-voiceclips>
-                        </div>
-                        <!-- Credits view section -->
-                        <div class="nsh-view-section-content" [ngClass]="{'active': selected==='credits'}">
-                            <nsh-view-section-credits></nsh-view-section-credits>
-                        </div>
-                        <!-- Physical Details view section -->
-                        <div class="nsh-view-section-content" [ngClass]="{'active': selected==='physic'}">
-                            <nsh-view-section-physic></nsh-view-section-physic>
+                        <div class="nsh-profile-footer">
+                            <table>
+                                <tr class="nsh-profile-footer-numbers">
+                                    <td>2k</td>
+                                    <td>20</td>
+                                </tr>
+                                <tr class="nsh-profile-footer-topics">
+                                    <td>views</td>
+                                    <td>watchers</td>
+                                </tr>
+                            </table>
                         </div>
                         
-                        </div>
-                    </div>
-
-    </div>
+                    </md-card>
+                    <br/>
+                    
+                </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <ngb-tabset #t="ngbTabset">
+                    <ngb-tab id="bio">
+                        <template ngbTabTitle><b>Bio</b></template>
+                        <template ngbTabContent>
+                            <div class="nsh-portfolio-section">
+                                <p>Sydney based Model and Actress. I have a passion for the Arts industry and have had a range of experience behind the Camera. Projects ranging from Commercial, Music Video, Theatre, Film, Television, Campaigns, Editorial and Online Store experience. I am confident and bubbly aiming to meet the individual needs of each job. Paid work only.</p>
+                            </div>
+                        </template>
+                    </ngb-tab>
+                    <ngb-tab id="photos">
+                        <template ngbTabTitle><b>Photos</b></template>
+                        <template ngbTabContent>
+                            <div class="nsh-portfolio-section">
+                                <nsh-view-section-photos></nsh-view-section-photos>
+                            </div>
+                        </template>
+                    </ngb-tab>
+                    <ngb-tab id="videos">
+                        <template ngbTabTitle><b>Videos</b></template>
+                        <template ngbTabContent>
+                            <div class="nsh-portfolio-section">
+                                <nsh-view-section-videos></nsh-view-section-videos>
+                            </div>
+                        </template>
+                    </ngb-tab>
+                    <ngb-tab id="Audios">
+                        <template ngbTabTitle><b>Audios</b></template>
+                        <template ngbTabContent>
+                            <div class="nsh-portfolio-section">
+                                <nsh-view-section-voiceclips></nsh-view-section-voiceclips>
+                            </div>
+                        </template>
+                    </ngb-tab>
+                    <ngb-tab id="Credits">
+                        <template ngbTabTitle><b>Credits</b></template>
+                        <template ngbTabContent>
+                            <div class="nsh-portfolio-section">
+                                 <nsh-view-section-credits></nsh-view-section-credits>
+                            </div>
+                        </template>
+                    </ngb-tab>
+                    <ngb-tab id="Physic">
+                        <template ngbTabTitle><b>Physic</b></template>
+                        <template ngbTabContent>
+                            <div class="nsh-portfolio-section">
+                                <nsh-view-section-physic></nsh-view-section-physic>
+                            </div>
+                        </template>
+                    </ngb-tab>
+                </ngb-tabset>
             </div>
         </div>
-
-
-
+    </div>
 </div>

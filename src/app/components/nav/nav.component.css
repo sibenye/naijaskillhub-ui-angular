@@ -41,10 +41,25 @@ Header Main Components
   display: none;
 }
 
-.nsh-nav-dropdown-menu {
-  z-index: 3;
+.nsh-navbar-dropdown-menu {
+  font-size: 12px;
 }
 
 md-icon.nsh-account-icon {
   font-size: 30px;
+  color: white;
 }
+
+.btn-outline-primary {
+  border-color: white;
+}
+
+.btn-outline-primary:hover {
+  background-color: #76FF03;
+  border-color: white;
+}
+
+.nsh-navbar-col {
+  padding-right: 50px;
+}
+
