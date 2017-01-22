@@ -5,7 +5,7 @@
 @include md-core();
 
 $primary: md-palette($md-deep-orange, 600, 500, 400);
-$accent:  md-palette($md-light-green, A200, A100, A400);
+$accent:  md-palette($md-light-green, A400, A200, A100);
 
 $theme: md-light-theme($primary, $accent);
 
