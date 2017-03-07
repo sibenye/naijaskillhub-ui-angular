@@ -1,0 +1,18 @@
+{
+  "name": "naijaskillhub-ui",
+  "description": "App json file for naijaskillhub ui",
+  "scripts": {
+  },
+  "env": {
+  },
+  "formation": {
+  },
+  "addons": [
+
+  ],
+  "buildpacks": [
+    {
+      "url": "heroku/nodejs"
+    }
+  ]
+}
