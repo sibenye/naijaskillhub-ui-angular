@@ -1,7 +1,6 @@
 <div class="container">
     <div class="row">
-      <div class="col-xs-12">
-        <div class="col-sm-3 col-xs-12">
+        <div class="col-md-3">
           <div class="nsh-edit-menu">
             <div class="nsh-edit-menu-item text-center" [ngClass]="{'active': selected==='profile'}" (click)="selected='profile';">
                 <span class="nsh-opacity">Profile</span>
@@ -9,34 +8,52 @@
             <div class="nsh-edit-menu-item text-center" [ngClass]="{'active': selected==='physic'}" (click)="selected='physic';">
                 <span class="nsh-opacity">Physic</span>
             </div>
-            <div class="nsh-edit-menu-item text-center" [ngClass]="{'active': selected==='media'}" (click)="selected='media';">
-                <span class="nsh-opacity">Media</span>
+            <div class="nsh-edit-menu-item text-center" [ngClass]="{'active': selected==='photos'}" (click)="selected='photos';">
+                <span class="nsh-opacity">Photos</span>
+            </div>
+            <div class="nsh-edit-menu-item text-center" [ngClass]="{'active': selected==='videos'}" (click)="selected='videos';">
+                <span class="nsh-opacity">Videos</span>
+            </div>
+            <div class="nsh-edit-menu-item text-center" [ngClass]="{'active': selected==='audios'}" (click)="selected='audios';">
+                <span class="nsh-opacity">Audios</span>
             </div>
             <div class="nsh-edit-menu-item text-center" [ngClass]="{'active': selected==='experience'}" (click)="selected='experience';">
                 <span class="nsh-opacity">Experience</span>
             </div>
           </div>
         </div>
-        <div class="col-sm-9 col-xs-12">
+        <div class="col-md-9">
           <!-- profile edit section -->
           <div class="nsh-edit-section-content"  [ngClass]="{'active': selected==='profile'}">
-              <nsh-edit-section-profile></nsh-edit-section-profile>
+              <nsh-edit-section-profile [userId]="userId"></nsh-edit-section-profile>
           </div>
+          <div class="nsh-divider"></div>
           <!-- Physic edit section -->
           <div class="nsh-edit-section-content" [ngClass]="{'active': selected==='physic'}">
               <nsh-edit-section-physic></nsh-edit-section-physic>
           </div>
-          <!-- Media edit search -->
-          <div class="nsh-edit-section-content" [ngClass]="{'active': selected==='media'}">
-              <nsh-edit-section-media></nsh-edit-section-media>
+          <div class="nsh-divider"></div>
+          <!-- Photo edit section -->
+          <div class="nsh-edit-section-content" [ngClass]="{'active': selected==='photos'}">
+              <nsh-edit-section-photo></nsh-edit-section-photo>
           </div>
-          <!-- Experience edit search -->
+          <div class="nsh-divider"></div>
+          <!-- Video edit section -->
+          <div class="nsh-edit-section-content" [ngClass]="{'active': selected==='videos'}">
+              <nsh-edit-section-video></nsh-edit-section-video>
+          </div>
+          <div class="nsh-divider"></div>
+          <!-- Audio edit section -->
+          <div class="nsh-edit-section-content" [ngClass]="{'active': selected==='audios'}">
+              <nsh-edit-section-audio></nsh-edit-section-audio>
+          </div>
+          <div class="nsh-divider"></div>
+          <!-- Experience edit section -->
           <div class="nsh-edit-section-content" [ngClass]="{'active': selected==='experience'}">
               <nsh-edit-section-experience></nsh-edit-section-experience>
           </div>
           
         </div>
-      </div>
 
     </div>
 

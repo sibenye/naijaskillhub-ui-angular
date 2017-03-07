@@ -7,17 +7,17 @@ import {
   animate
 } from '@angular/core';
 
-import { AuthService } from '../../services';
+import { Observable }     from 'rxjs/Observable';
+import { Router, ActivatedRoute, Params } from '@angular/router';
+// Add the RxJS Observable operators.
+import '../../rxjs-operators';
+
+import { AuthService } from '../../providers';
 
 export class Menu {
   name: string;
   route: string;
 }
-
-const MENU_ITEMS: Menu[] = [
-  { name: 'My Account', route: '/portfolio' },
-  { name: 'Sample Page', route: '/sample' }
-];
 
 @Component({
   selector: 'nsh-nav',
@@ -25,9 +25,15 @@ const MENU_ITEMS: Menu[] = [
   styleUrls: ['nav.component.css']
 })
 export class NSH_NavComponent {
-  menuItems = MENU_ITEMS;
+  
+  currentUserId: string;
 
-  constructor (public _authService: AuthService) {}
+  constructor (public _authService: AuthService, 
+              private _route: ActivatedRoute,
+              private _router: Router) 
+  {
+    
+  }
 
   isLoggedIn() {
     return this._authService.getAuthStatus();
@@ -35,5 +41,19 @@ export class NSH_NavComponent {
 
   logOut() {
     this._authService.logOut();
+  }
+
+  navigateTo(path) {
+    this._router.navigateByUrl(path);
+  }
+
+  getMenuItems() {
+    this.currentUserId = this._authService.getLoggedInUserId().toString();
+    const MENU_ITEMS: Menu[] = [
+      { name: 'Edit Portfolio', route: '/portfolio/' + this.currentUserId + '/edit' },
+      { name: 'Portfolio', route: '/portfolio' },
+      { name: 'Sample Page', route: '/sample' }
+    ];
+    return MENU_ITEMS;
   }
 }

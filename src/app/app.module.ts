@@ -1,4 +1,4 @@
-//import Angular modules
+//import Angular and third party modules
 import { NgModule } from '@angular/core';
 import { FormsModule }   from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
@@ -23,7 +23,9 @@ import {
     NSH_PortfolioViewComponent,
     NSH_PortfolioEditComponent,
     NSH_ExperienceEditSectionComponent,
-    NSH_MediaEditSectionComponent,
+    NSH_PhotoEditSectionComponent,
+    NSH_AudioEditSectionComponent,
+    NSH_VideoEditSectionComponent,
     NSH_PhysicEditSectionComponent,
     NSH_ProfileEditSectionComponent,
     NSH_VoiceClipsViewSectionComponent,
@@ -35,10 +37,12 @@ import {
     NSH_LoginComponent
 } from './components';
 
-//import directives, providers, and services
+//import directives, and providers
 import { ToggleTemplateDirective } from './directives/toggleTemplate.directive';
-import { AuthService } from './services';
-import { HttpService } from './services';
+import { AuthService } from './providers';
+import { HttpService } from './providers';
+import { StateService } from './providers';
+import { UserProfileService } from './providers';
 
 @NgModule({
   imports: [
@@ -67,7 +71,9 @@ import { HttpService } from './services';
     SampleComponent,
     ToggleTemplateDirective,
     NSH_ExperienceEditSectionComponent,
-    NSH_MediaEditSectionComponent,
+    NSH_PhotoEditSectionComponent,
+    NSH_VideoEditSectionComponent,
+    NSH_AudioEditSectionComponent,
     NSH_PhysicEditSectionComponent,
     NSH_ProfileEditSectionComponent,
     NSH_VoiceClipsViewSectionComponent,
@@ -78,7 +84,7 @@ import { HttpService } from './services';
     NSH_RegisterComponent,
     NSH_LoginComponent
   ],
-  providers: [HttpService, AuthService],
+  providers: [HttpService, AuthService, StateService, UserProfileService],
   bootstrap: [ NSH_AppComponent ]
 })
 export class NSH_AppModule { }

@@ -1,6 +1,6 @@
 import {Component} from '@angular/core';
 import { Router } from '@angular/router'
-import { AuthService } from '../../services';
+import { AuthService } from '../../providers';
 import { NotificationsService } from 'angular2-notifications';
 import { SimpleNotificationsComponent } from 'angular2-notifications';
 
@@ -44,6 +44,7 @@ export class NSH_LoginComponent {
         } else if (response) {
             //save authToken
             this._authService.storeAuthToken(response.authToken);
+            this._authService.storeLoggedInUserId(response.userId);
             //redirect to profile page.
             this._router.navigateByUrl('portfolio');
         }
