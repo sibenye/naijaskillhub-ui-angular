@@ -12,7 +12,7 @@ export const ROUTES: Routes = [
   { path: '',      component: NSH_HomeComponent },
   { path: 'home',  component: NSH_HomeComponent },
   { path: 'portfolio', component: NSH_PortfolioViewComponent },
-  { path: 'portfolio/edit', component: NSH_PortfolioEditComponent },
+  { path: 'portfolio/:id/edit', component: NSH_PortfolioEditComponent },
   { path: 'sample', component: SampleComponent },
   { path: 'register', component: NSH_RegisterComponent},
   { path: 'login', component: NSH_LoginComponent}

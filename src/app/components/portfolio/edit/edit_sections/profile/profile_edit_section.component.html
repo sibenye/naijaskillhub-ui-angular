@@ -1,9 +1,58 @@
-<form>
-    <table cellspacing="0">
-        <td><md-input placeholder="First name" value="Haley">Haley</md-input></td>
-        <td><md-input placeholder="Last name" value="Jaden">Jaden</md-input></td>
-    </table>
-    <p>
-    <md-input placeholder="Address" value="1600 Amphitheatre Pkway"></md-input>
-    </p>
+
+<div>
+<form (ngSubmit)="updateProfile()" #profileForm="ngForm">
+    <md-card>
+        <md-card-header>
+            <md-card-title>Profile</md-card-title>
+        </md-card-header>
+        <md-card-content>
+            <table cellspacing="0">
+                <tr>
+                <td><md-input placeholder="First name" [(ngModel)]="userProfile.firstName" name="firstName">Haley</md-input></td>
+                <td><md-input placeholder="Last name" [(ngModel)]="userProfile.lastName" name="lastName">Jaden</md-input></td>
+                </tr>
+                <tr>
+                <td><md-input placeholder="City" [(ngModel)]="userProfile.city" name="city"></md-input></td>
+                <td>
+                    <md-select placeholder="State" name="state" [(ngModel)]="userProfile.state">
+                        <md-option *ngFor="let state of states" selected="userProfile.state == state" [value]="state">{{state}}</md-option>
+                    </md-select>
+                </td>
+                </tr>
+                <tr>
+                <td>
+                    <md-select placeholder="Gender" name="gender" [(ngModel)]="userProfile.gender">
+                        <md-option selected="userProfile.gender == Male" value="Male">Male</md-option>
+                        <md-option selected="userProfile.gender == Female" value="Female">Female</md-option>
+                    </md-select>
+                </td>
+                <td><md-input type="number" placeholder="Year of birth" [(ngModel)]="userProfile.yob" name="yob"></md-input></td>
+                </tr>
+            </table>
+        </md-card-content>
+        
+        <md-card-actions>
+            <button md-button color="accent" [disabled]="!profileForm.form.valid">Save</button>
+            <md-progress-spinner *ngIf="profileSaveBtnspin" class="nsh-app-spinner-sm" mode="indeterminate" color="accent"></md-progress-spinner>
+    </md-card-actions>
+    </md-card>
+    
 </form>
+<div class="nsh-divider"></div>
+<md-card>
+    <md-card-header>
+        <md-card-title>Profile Image</md-card-title>
+    </md-card-header>
+    <span *ngIf="profileImageExists()">
+    <img [src]="getFullImageUrl()" width="80" height="87">
+    </span>
+    <md-card-actions>
+    <input type="file" name="file" id="file" class="nsh-profile-image-upload" accept="image/*" (change)="handleInputChange($event)"/>
+    <button for="file" md-button color="accent">{{getButtonText()}}</button>
+    <md-progress-spinner *ngIf="imageSaveBtnspin" class="nsh-app-spinner-sm" mode="indeterminate" color="accent"></md-progress-spinner>
+    </md-card-actions>
+    
+</md-card>
+
+
+</div>

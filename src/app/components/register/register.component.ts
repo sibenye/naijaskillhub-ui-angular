@@ -1,9 +1,8 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router'
 import { RegisterRequest } from '../../models';
-import { AuthService } from '../../services';
+import { AuthService } from '../../providers';
 import { NotificationsService } from 'angular2-notifications';
-import { SimpleNotificationsComponent } from 'angular2-notifications';
 
 
 @Component({
@@ -95,8 +94,10 @@ export class NSH_RegisterComponent {
         } else if (response) {
             //save authToken
             this._authService.storeAuthToken(response.authToken);
+            this._authService.storeLoggedInUserId(response.id);
             //redirect to profile page.
-            this._router.navigateByUrl('portfolio/edit');
+            let userId = response.id;
+            this._router.navigateByUrl('portfolio/'+ userId +'/edit');
         }
         //stop spin
         this.spin = false;

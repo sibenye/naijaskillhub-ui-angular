@@ -53,7 +53,7 @@ h4 {
 }
 
 a {
-  color: #d44457;
+  color: #673AB7;
   text-decoration: none;
   cursor: pointer;
 }
@@ -65,6 +65,12 @@ img {
 
 .divider {
   height: 50px;
+}
+
+.nsh-divider {
+  border-top: 1px solid #dddddd;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 /* grid */

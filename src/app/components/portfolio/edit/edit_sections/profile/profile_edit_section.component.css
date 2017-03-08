@@ -5,3 +5,26 @@ table {
 md-input {
     width: 90%;
 }
+
+md-input[type=number]{
+    width: 80px;
+} 
+
+md-card-actions {
+    padding-top: 20px;
+    padding-left: 10px;
+}
+
+.nsh-profile-image-upload {
+	width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+}
+
+md-card-title {
+    font-size: 24px !important;
+    font-weight: bold;
+}

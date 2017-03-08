@@ -17,7 +17,7 @@ export class AuthService {
 
     registerUser (request: RegisterRequest): Observable<any> {
         let data = JSON.stringify(request);
-        return this._httpService.makeRequest(data, this.registerUrl);
+        return this._httpService.postRequest(data, this.registerUrl, 'application/json');
     }
 
     login (emailAddress: string, password: string, credType = 'standard'): Observable<any> {
@@ -25,7 +25,7 @@ export class AuthService {
             'password' : password, 
             'credentialType': credType
         };
-        return this._httpService.makeRequest(data, this.loginUrl);
+        return this._httpService.postRequest(data, this.loginUrl, 'application/json');
     }
 
     getAuthStatus() {
@@ -33,18 +33,28 @@ export class AuthService {
         return this.isAuthenticated;
     }
 
-    public storeAuthToken(value: String){
-        this._localStorageService.set('AUTH-TOKEN', value);
+    public storeAuthToken(value: string){
+        this._localStorageService.set('NSH-AUTH-TOKEN', value);
         this._localStorageService.set('isLoggedIn', true);
     }
 
+    public storeLoggedInUserId(userId) {
+        this._localStorageService.set('loggedInUserId', userId);
+    }
+
     public getAuthToken() {
-        return this._localStorageService.get('AUTH-TOKEN');
+        return this._localStorageService.get('NSH-AUTH-TOKEN');
+    }
+
+    public getLoggedInUserId() {
+        
+        return (this._localStorageService.get('loggedInUserId')) ? this._localStorageService.get('loggedInUserId') : "";
     }
 
     public logOut() {
-        this._localStorageService.remove('AUTH-TOKEN');
+        this._localStorageService.remove('NSH-AUTH-TOKEN');
         this._localStorageService.set('isLoggedIn', false);
+        this._localStorageService.set('loggedInUserId', null);
         //redirect to home page.
         this._router.navigateByUrl('home');
     }

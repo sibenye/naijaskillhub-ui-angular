@@ -1,4 +1,6 @@
 export * from './experience';
-export * from './media';
+export * from './photos';
+export * from './audios';
+export * from './videos';
 export * from './physic';
 export * from './profile';
